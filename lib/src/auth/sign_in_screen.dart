@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 import 'components/custom_text_field.dart';
@@ -12,8 +13,54 @@ class SignInScreen extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: Container(
-              color: Colors.red,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // Nome app // App name
+                Text.rich(
+                  TextSpan(
+                    style: TextStyle(
+                      fontSize: 60,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: 'Ven',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'das',
+                        style: TextStyle(
+                          color: Colors.deepOrange,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                //Subtitulo //Subtitle
+                SizedBox(
+                  height: 30,
+                  child: DefaultTextStyle(
+                    style: const TextStyle(
+                      fontSize: 25,
+                      color: Colors.brown,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    child: AnimatedTextKit(
+                      pause: Duration.zero,
+                      repeatForever: true,
+                      animatedTexts: [
+                        FadeAnimatedText('Estoque'),
+                        FadeAnimatedText('Compras'),
+                        FadeAnimatedText('Aquisição'),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           //Formulario inicio
