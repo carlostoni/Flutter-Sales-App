@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
+        scaffoldBackgroundColor: Colors.white.withAlpha(190),
       ),
       debugShowCheckedModeBanner: false,
         home: const SignInScreen(),

@@ -14,7 +14,7 @@ class SignInScreen extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: CustomColors.customSwatchColor,
+      //backgroundColor: CustomColors.customSwatchColor,
       body: SingleChildScrollView(
         child: SizedBox(
           height: size.height,
@@ -32,10 +32,10 @@ class SignInScreen extends StatelessWidget {
                           fontSize: 70,
                         ),
                         children: [
-                          const TextSpan(
+                          TextSpan(
                             text: 'Ven',
                             style: TextStyle(
-                              color: Colors.white,
+                              color: CustomColors.customSwatchColor,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
