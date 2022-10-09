@@ -3,9 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:vendas/src/config/custom_colors.dart';
 import 'package:vendas/src/home/components/category_tile.dart';
 
-class HomeTab extends StatelessWidget {
+class HomeTab extends StatefulWidget {
   HomeTab({Key? key}) : super(key: key);
 
+  @override
+  _HomeTabState createState() => _HomeTabState();
+}
+
+class _HomeTabState extends State<HomeTab> {
   List<String> categories = [
     'Item 1',
     'Item 2',
@@ -13,6 +18,8 @@ class HomeTab extends StatelessWidget {
     'Item 4',
     'Item 5',
   ];
+
+  String selectedCategory = 'Item 1';
 
   @override
   Widget build(BuildContext context) {
@@ -108,14 +115,21 @@ class HomeTab extends StatelessWidget {
             ),
           ),
           //Categorias
-          SizedBox(
+          Container(
+            padding: const EdgeInsets.only(left: 25),
             height: 40,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemBuilder: (_, index) {
                 return CategoryTile(
+                  onPressed: () {
+                    setState((){
+                      selectedCategory = categories[index];
+                    });
+                    
+                  },
                   category: categories[index],
-                  isSelected: false,
+                  isSelected: categories[index] == selectedCategory,
                 );
               },
               separatorBuilder: (_, index) => const SizedBox(width: 10),
