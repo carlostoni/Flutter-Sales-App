@@ -2,25 +2,17 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:vendas/src/config/custom_colors.dart';
 import 'package:vendas/src/pages/home/components/category_tile.dart';
-
+import 'package:vendas/src/config/app_data.dart' as appData;
 
 class HomeTab extends StatefulWidget {
-  HomeTab({Key? key}) : super(key: key);
+  const HomeTab({Key? key}) : super(key: key);
 
   @override
   _HomeTabState createState() => _HomeTabState();
 }
 
 class _HomeTabState extends State<HomeTab> {
-  List<String> categories = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
-  ];
-
-  String selectedCategory = 'Item 1';
+  String selectedCategory = 'Lista 1';
 
   @override
   Widget build(BuildContext context) {
@@ -124,23 +116,39 @@ class _HomeTabState extends State<HomeTab> {
               itemBuilder: (_, index) {
                 return CategoryTile(
                   onPressed: () {
-                    setState((){
-                      selectedCategory = categories[index];
+                    setState(() {
+                      selectedCategory = appData.categories[index];
                     });
-                    
                   },
-                  category: categories[index],
-                  isSelected: categories[index] == selectedCategory,
+                  category: appData.categories[index],
+                  isSelected: appData.categories[index] == selectedCategory,
                 );
               },
               separatorBuilder: (_, index) => const SizedBox(width: 10),
-              itemCount: categories.length,
+              itemCount: appData.categories.length,
+            ),
+          ),
+          //Grid
+          Expanded(
+            child: GridView.builder(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+              physics: const BouncingScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
+                childAspectRatio: 9 / 10.5,
+              ),
+              itemCount: appData.items.length,
+              itemBuilder: (_, index) {
+                return Container(
+                  color: Colors.red,
+                );
+              },
             ),
           ),
         ],
       ),
-
-      //Grid
     );
   }
 }
