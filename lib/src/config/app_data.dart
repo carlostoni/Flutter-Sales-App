@@ -2,42 +2,42 @@ import 'package:vendas/src/models/item_model.dart';
 
 ItemModel item_1 = ItemModel(
   description: '',
-  imgUrl: 'assets\fruits\arroz.png',
+  imgUrl: 'assets/itens/arroz.png',
   itemName: 'Item 1',
   price: 5.5,
   unit: 'Kg',
 );
 ItemModel item_2 = ItemModel(
   description: '',
-  imgUrl: 'assets\fruits\castanha.png',
+  imgUrl: 'assets/itens/castanha.png',
   itemName: 'Item 2',
   price: 5.5,
   unit: 'Kg',
 );
 ItemModel item_3 = ItemModel(
   description: '',
-  imgUrl: 'assets\fruits\farinha.png',
+  imgUrl: 'assets/itens/farinha.png',
   itemName: 'Item 3',
   price: 5.5,
   unit: 'Kg',
 );
 ItemModel item_4 = ItemModel(
   description: '',
-  imgUrl: 'assets\fruits\feijao.png',
+  imgUrl: 'assets/itens/feijao.png',
   itemName: 'Item 4',
   price: 5.5,
   unit: 'Kg',
 );
 ItemModel item_5 = ItemModel(
   description: '',
-  imgUrl: 'assets\fruits\lentilha.png',
+  imgUrl: 'assets/itens/lentilha.png',
   itemName: 'Item 5',
   price: 5.5,
   unit: 'Kg',
 );
 ItemModel item_6 = ItemModel(
   description: '',
-  imgUrl: 'assets\fruits\milho.png',
+  imgUrl: 'assets/itens/milho.png',
   itemName: 'Item 6',
   price: 5.5,
   unit: 'Kg',
