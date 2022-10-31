@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vendas/src/config/custom_colors.dart';
 import 'package:vendas/src/models/item_model.dart';
+import 'package:vendas/src/pages/product/product_screen.dart';
 import 'package:vendas/src/services/utils_services.dart';
 
 class ItemTile extends StatelessWidget {
@@ -17,57 +18,67 @@ class ItemTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Card(
-          elevation: 5,
-          shadowColor: Colors.blueGrey.shade300,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                //Imagem
-                Expanded(
-                  child: Image.asset(item.imgUrl),
-                ),
-
-                //Nome
-                Text(
-                  item.itemName,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: CustomColors.customContrastColor,
+        // Conteudo
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (c) {
+              return ProductScreen(item: item);
+            }));
+          },
+          child: Card(
+            elevation: 5,
+            shadowColor: Colors.blueGrey.shade300,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  //Imagem Image
+                  Expanded(
+                    child: Image.asset(item.imgUrl),
                   ),
-                ),
 
-                //Preco - Unidade
-                Row(
-                  children: [
-                    Text(
-                      utilsServices.priceToCurrency(item.price),
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: CustomColors.customSwatchColor,
-                      ),
+                  //Nome  Name
+                  Text(
+                    item.itemName,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: CustomColors.customContrastColor,
                     ),
-                    Text(
-                      '/${item.unit}',
-                      style: TextStyle(
-                        color: Colors.blueGrey.shade500,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
+                  ),
+
+                  //Preco - Unidade Price - Unit
+                  Row(
+                    children: [
+                      Text(
+                        utilsServices.priceToCurrency(item.price),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: CustomColors.customSwatchColor,
+                        ),
                       ),
-                    ),
-                  ],
-                )
-              ],
+                      Text(
+                        '/${item.unit}',
+                        style: TextStyle(
+                          color: Colors.blueGrey.shade500,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ),
+
+        // Botão adicionar ao carrinho Add to cart button
         Positioned(
           top: 4,
           right: 4,
