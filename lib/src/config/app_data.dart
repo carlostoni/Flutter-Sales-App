@@ -1,4 +1,6 @@
+import 'package:vendas/src/models/cart_item_model.dart';
 import 'package:vendas/src/models/item_model.dart';
+import 'package:vendas/src/models/user_model.dart';
 
 ItemModel item_1 = ItemModel(
   description: 'Item 1',
@@ -44,18 +46,39 @@ ItemModel item_6 = ItemModel(
 );
 
 List<ItemModel> items = [
-item_1,
-item_2,
-item_3,
-item_4,
-item_5,
-item_6,
+  item_1,
+  item_2,
+  item_3,
+  item_4,
+  item_5,
+  item_6,
 ];
 
 List<String> categories = [
-    'Lista 1',
-    'Lista 2',
-    'Lista 3',
-    'Lista 4',
-    'Lista 5',
-  ];
+  'Lista 1',
+  'Lista 2',
+  'Lista 3',
+  'Lista 4',
+  'Lista 5',
+];
+List<CartItemModel> cartItems = [
+  CartItemModel(
+    item: item_1,
+    quantity: 1,
+  ),
+  CartItemModel(
+    item: item_2,
+    quantity: 1,
+  ),
+  CartItemModel(
+    item: item_3,
+    quantity: 2,
+  ),
+];
+
+UserModel user = UserModel(
+    name: 'carlos',
+    email: 'carlos@gmail.com',
+    celular: '99 9 9999-9999',
+    cpf: '999.999.999-99',
+    senha: '');
