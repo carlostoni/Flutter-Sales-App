@@ -105,6 +105,7 @@ class SignInScreen extends StatelessWidget {
                       height: 40,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                          backgroundColor: CustomColors.customSwatchColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(40),
                           ),

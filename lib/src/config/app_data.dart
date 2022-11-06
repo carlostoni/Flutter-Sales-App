@@ -12,7 +12,7 @@ ItemModel item_2 = ItemModel(
   imgUrl: 'assets/itens/castanha.png',
   itemName: 'Item 2',
   price: 5.5,
-  unit: 'Kg',
+  unit: 'un',
 );
 ItemModel item_3 = ItemModel(
   description: 'Item 3',

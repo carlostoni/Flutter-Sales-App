@@ -85,6 +85,7 @@ class SignUpScreen extends StatelessWidget {
                           height: 40,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
+                              
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(40),
                               ),
