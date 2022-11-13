@@ -92,17 +92,17 @@ class _ProfileTabState extends State<ProfileTab> {
           child: Stack(
             children: [
               Padding(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(12.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Padding(
                       padding: EdgeInsets.symmetric(
-                        vertical: 14,
+                        vertical: 12,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        padding: const EdgeInsets.symmetric(vertical: 10),
                         child: Text(
                           'Atualizar Senha',
                           textAlign: TextAlign.center,
@@ -130,7 +130,7 @@ class _ProfileTabState extends State<ProfileTab> {
                     ),
                     //botao de troca de senha password change button
                     SizedBox(
-                      height: 45,
+                      height: 40,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
